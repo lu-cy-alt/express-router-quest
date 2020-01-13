@@ -1,15 +1,13 @@
 
-const express = require("express");
-const comments = require("./comments");
-const posts = require("./posts");
-const tags = require("./tags");
+const express = require('express');
+const posts = require('./posts');
+const comments = require('./comments');
+const tags = require('./tags');
+
 const router = express.Router();
 
-
-router.use("/comments", comments);
-router.use("/posts", posts);
-router.use("/tags", tags);
+router.use('/posts', posts);
+router.use('/comments', comments);
+router.use('/tags', tags);
 
 module.exports = router;
-
-

@@ -9,18 +9,14 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:tagId/posts', (req, res) => {
-
   const tagId = Number(req.params.tagId);
   const foundTag = fakePosts.find((tag) => tag.id === tagId);
-  
   if (!foundTag) {
-
     return res.status(404).json({
       error: 'Post not found',
     });
   }
   const filtPost = fakePosts.filter((post) => post.tag_ids.includes(tagId));
-
   res.json(filtPost);
 });
 
